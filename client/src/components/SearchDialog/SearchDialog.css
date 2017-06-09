@@ -1,0 +1,37 @@
+.searchFormContainer {
+	border: 5px solid #eeeeee;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.searchInputContainer {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.searchIconContainer {
+	flex-grow: 0;
+	flex-shrink: 0;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.searchInput {
+	border: none;
+	font-size: 18px;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.searchInput:focus {
+	outline: none;
+}
+
+.searchFormTitle {
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+}

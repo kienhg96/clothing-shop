@@ -1,0 +1,72 @@
+.topSidebarContainer {
+	position: relative;
+	height: 210px;
+}
+
+.topSidebarContainer .logoContainer {
+	padding-top: 30px;
+}
+
+.topSidebarContainer .metaMenuContainer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 100%;
+	background-color: #1d1d1d;
+}
+
+.topSidebarContainer .menuAllScreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(29, 29, 29);
+	transition: opacity 0.1s linear;
+	overflow-y: auto;
+	z-index: 2;
+}
+
+.topSidebarContainer .closeButtonContainer {
+	position: fixed;
+	right: 20px;	
+	top: 20px;	
+}
+
+.littleMenu {
+	padding-top: 60px;
+}
+
+.topSidebarContainer .littleMenu .navigation a {
+	font-size: 15px;
+}
+
+.menuAllScreen::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #d5d5d5;
+}
+
+.menuAllScreen::-webkit-scrollbar {
+	width: 8px;
+	background-color: #d5d5d5;
+}
+
+.menuAllScreen::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #9999ff;
+}
+
+.responsiveMenuTransition-enter {
+	opacity: 0;
+}
+
+.responsiveMenuTransition-enter.responsiveMenuTransition-enter-active {
+	opacity: 1;
+}
+
+.responsiveMenuTransition-leave {
+	opacity: 1;
+}
+
+.responsiveMenuTransition-leave.responsiveMenuTransition-leave-active {
+	opacity: 0;
+}

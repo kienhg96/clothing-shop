@@ -1,0 +1,59 @@
+.gridItemContainer {
+	background-color: #ddd;
+	position: relative;
+}
+
+.gridItemImage {
+	width: 100%;
+	height: auto;
+}
+
+.caption {
+	font-family: 'Muli', sans-serif;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+	position: relative;
+	color: #444444;
+}
+
+.gridItemContainer .arrowContainer {
+	width: 100%;
+	position: absolute;
+	top: -38px;
+	text-align: center;
+}
+
+.gridItemContainer .arrow {
+	width: 30px;
+	height: 0;
+	border-bottom: 15px solid #ddd;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+}
+
+.productName {
+	font-family: 'Muli', sans-serif;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.price {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: transparent;
+	transition: background-color 0.2s;
+}
+
+.gridItemContainer:hover > .cover {
+	background-color: rgba(0, 0, 0, 0.1);
+}

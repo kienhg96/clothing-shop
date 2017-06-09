@@ -1,0 +1,96 @@
+.imageSlideContent {
+	cursor: grab;
+	background-size: cover !important;
+	background-position: center !important;
+}
+
+.imageSlideContent:active {
+	cursor: grabbing;
+}
+
+.imageSlide {
+	position: relative;
+}
+
+.slideButtonContainer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: flex;
+}
+
+.zoomModalContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+}
+
+@media screen and (min-width: 1100px) {
+	.imageSlideContent {
+		height: 100vh;
+	}
+}
+
+@media screen and (max-width: 1099px) and (min-width: 700px){
+	.imageSlideContent {
+		height: 800px;
+	}
+}
+
+@media screen and (max-width: 699px) {
+	.imageSlideContent {
+		height: 600px;
+	}
+}
+
+.slideIconInfo {
+	font-family: "Muli", sans-serif;
+	line-height: 26px;
+}
+
+.slideIconInfo, .slideButton {
+	padding: 10px;
+	width: 50px;
+	text-align: center;
+	background: rgba(29, 29, 29, 0.3);
+	color: #eee;
+	transition: background 0.2s;
+}
+
+.slideButton {
+	cursor: pointer;
+}
+
+.slideButton:hover {
+	background: rgba(29, 29, 29, 0.5);
+}
+
+.dotSlide {
+	position: absolute;
+	bottom: 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: rgba(29, 29,29, 0.3);
+}
+
+.dotSlide button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: #ccc;
+	outline: none;
+	padding-left: 15px;
+
+}
+
+.dotSlide li.slick-active button {
+	color: #fff;
+}
+
+.dotSlide li {
+	display: inline-block;
+}

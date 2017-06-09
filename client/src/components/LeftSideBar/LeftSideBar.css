@@ -1,0 +1,33 @@
+.leftSidebarScrollContainer {
+	width: 290px;
+	height: calc(100vh - 172px - 46px);
+	overflow: auto;
+}
+
+.leftSidebarScrollContainer::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: #d5d5d5;
+}
+
+.leftSidebarScrollContainer::-webkit-scrollbar {
+	width: 8px;
+	background-color: #d5d5d5;
+}
+
+.leftSidebarScrollContainer::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #e0ad3c;
+}
+
+.leftSidebarContainer .logoContainer {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.leftSidebarContainer .metaMenuContainer {
+	padding-bottom: 20px;
+}
+
+.leftSidebarScrollContainer .categoryMenuContainer {
+	padding-top: 35px;
+}

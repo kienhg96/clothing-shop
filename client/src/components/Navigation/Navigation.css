@@ -1,0 +1,26 @@
+.navigation {
+	list-style-type: none;
+	padding: 0;
+	margin-top: 60px;
+}
+
+.navigation > li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.navigation > li > a {
+	color: #8d8d8d;
+	font-family: sans-serif;
+	font-size: 13px;
+	transition: color 0.2s;
+}
+
+.navigation > li.active > a {
+	font-weight: bold;
+	color: #eee;
+}
+
+.navigation > li:not(.active) > a:hover {
+	color: #e0ad3c;
+}

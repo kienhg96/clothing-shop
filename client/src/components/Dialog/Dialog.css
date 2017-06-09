@@ -1,0 +1,53 @@
+.dialogContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(200, 200, 200, 0.8);
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.dialogContent {
+	padding: 70px 80px 80px 80px;
+	background-color: #fff;
+	position: relative;
+}
+
+.dialogContent .closeButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #222;
+	width: 54px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+}
+
+.dialogContent .closeButton:hover {
+	color: #e0ad3c;
+	background-color: #333;
+	transition: color 0.2s, background-color 0.2s;
+}
+
+.dialogTransition-enter {
+	opacity: 0;
+}
+
+.dialogTransition-enter.dialogTransition-enter-active {
+	opacity: 1;
+	transition: opacity 200ms ease-in;
+}
+
+.dialogTransition-leave {
+	opacity: 1;
+}
+
+.dialogTransition-leave.dialogTransition-leave-active {
+	opacity: 0;
+	transition: opacity 100ms ease-in;
+}

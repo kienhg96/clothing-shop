@@ -1,0 +1,31 @@
+.allProductsContainer {
+	text-align: center;
+}
+
+.productContainer {
+	display: inline-block;
+}
+
+@media screen and (max-width: 655px) {
+	.productContainer {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 656px) {
+	.productContainer {
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 1360px) {
+	.productContainer {
+		width: 33.33%;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.productContainer {
+		width: 25%;
+	}
+}

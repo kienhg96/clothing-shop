@@ -1,0 +1,162 @@
+.pathContainer {
+	font-size: 11px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	margin-bottom: 35px;
+}
+
+.pathSeperate {
+	margin-left: 8px;
+	margin-right: 8px;
+	color: rgba(157,157,157,0.5);
+}
+
+.pathUrl {
+	color: #9d8347;
+	font-weight: bold;
+}
+
+.pathName {
+	color: rgb(157,157,157);
+}
+
+.productDetailNameContainer {
+	margin-bottom: 35px;
+}
+
+.productDetailName {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.productDetailProductor {
+	font-family: 'Muli', sans-serif;
+	font-size: 13px;
+}
+
+.productDetailProductorName {
+	color: #9d8347;
+}
+
+.productDetailProductorContainer {
+	margin-bottom: 35px;
+}
+
+.productDetailPrice {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+
+.productDetailPriceContainer {
+	margin-bottom: 35px;
+}
+
+.productDetailBrief {
+	color: #666;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: justify;
+}
+
+.productDetailBriefContainer {
+	margin-bottom: 45px;
+}
+
+.productItemCountCheckoutContainer, .productOptionContainer {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.productItemCountCheckoutContainer {
+	display: flex;
+}
+
+.itemCount {
+	width: 100%;
+}
+
+.itemCountInput {
+	border: none;
+	outline: none;
+	width: 100%;
+	padding: 20px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
+.itemCountContainer {
+	margin-right: 20px;
+	flex: 0 0 70px;
+}
+
+.checkoutButton {
+	border: none;
+	outline: none;
+	height: 100%;
+	width: 100%;
+	background-color: #b89955;
+	color: #fff;
+	transition: background-color 0.2s;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.checkoutButton:hover {
+	background-color: #e2ba62;
+}
+
+.checkoutButtonContainer {
+	flex: 1;
+}
+
+@media screen and (min-width: 1100px) {
+	.productInformation {
+		font-family: 'Muli', sans-serif;
+	}
+
+	.productSizeLabel {
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.productOptionContainer {
+		width: 100%;
+	}
+
+	.productItemCountCheckoutContainer {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1099px) {
+	.productInformation {
+		font-family: 'Muli', sans-serif;
+		text-align: center;
+	}
+}
+
+.productShareContainer {
+	color: #9d8347;
+	cursor: pointer;
+}
+
+.productShareContainer:hover {
+	color: #e0a418;
+}
+
+.productShareContainer:active {
+	color: #7d6b42;
+}
+
+.productShareContainer > span {
+	padding-left: 10px;
+}
