@@ -1,54 +1,39 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import './App.css';
 import SideBar from '../SideBar';
 import AllProducts from '../AllProducts';
-import SearchDialog from '../../components/SearchDialog';
 import Product from '../Product';
-
-import { Route, Switch } from 'react-router-dom';
+import Blog from '../Blog';
+import Home from '../Home';
+import DialogCenter from '../DialogCenter';
+import Search from '../Search';
+import Cart from '../Cart';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			searchDialog: false
-		}
-	}
-
 	render() {
 		return (
 			<div>
 				<div className="sidebarContainer">
-					<SideBar onSearchClick={() => this.setState({ searchDialog: true })}/>
+					<SideBar onSearchClick={() => this.setState({ searchDialog: true })} />
 				</div>
 				<div className="contentContainer">
 					<Switch>
-						<Route exact path="/" render={() => (
-							<div>
-								Hi
-							</div>
-						)}/>
-						<Route exact path="/category/:name" render={({match}) => {
-							const categoryName = match.params.name;
-							console.log('Getting data from', categoryName);
-							return (
-								<AllProducts />
-							)
-						}}/>
-						<Route exact path="/product/:id" render={({match}) => {
-							const productId = match.params.id;
-							console.log('Getting data from', productId);
-							return (
-								<Product />
-							)
-						}}/>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/blog" component={Blog} />
+						<Route exact path="/category/:name" render={({match}) => 
+							<AllProducts categoryName={match.params.name} />
+						} />
+						<Route exact path="/product/:id" render={({match}) => 
+							<Product productId={match.params.id} />
+						} />
+						<Route exact path="/search/:q" render={({match}) => 
+							<Search query={match.params.q} />
+						}/>
+						<Route exact path="/cart" component={Cart} />
 					</Switch>
 				</div>
-				<div>
-					<SearchDialog 
-						show={this.state.searchDialog}
-						onRequestClose={() => this.setState({ searchDialog: false })}
-					/>
-				</div>
+				<DialogCenter />
 			</div>
 		)
 	}

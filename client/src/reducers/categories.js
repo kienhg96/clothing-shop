@@ -1,19 +1,9 @@
-const DEFAULT_STATE = [{
-	id: '1',
-	name: 'quanao1',
-	title: 'Quần áo 1'
-}, {
-	id: '2',
-	name: 'quanao2',
-	title: 'Quần áo 2'
-}, {
-	id: '3',
-	name: 'quanao3',
-	title: 'Quần áo 3'
-}];
+import { SET_CATEGORIES } from '../constants';
 
-export default (state = DEFAULT_STATE, action) => {
+export default (state = [], action) => {
 	switch (action.type) {
+		case SET_CATEGORIES:
+			return action.categories;
 		default:
 			return state;
 	}

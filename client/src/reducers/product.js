@@ -1,19 +1,9 @@
-const DEFAULT_STATE = {
-	name: "CASHMERE WOOL COAT",
-	producer: "Hoang Kien",
-	price: 120000,
-	briefDescription: "This item can be purchased via Ramunė Piekautaitė",
-	sizes: [36, 38, 40],
-	colors: ['white', 'black'],
-	category: {
-		id: 1,
-		name: 'quanao1',
-		title: 'Quần áo 1'
-	}
-}
+import { SET_PRODUCT } from '../constants';
 
-export default (state = DEFAULT_STATE, action) => {
+export default (state = {}, action) => {
 	switch (action.type) {
+		case SET_PRODUCT:
+			return action.product;
 		default:
 			return state;
 	}

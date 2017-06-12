@@ -5,9 +5,9 @@ import store from './configs/store';
 import history from './configs/history';
 import { ConnectedRouter } from 'react-router-redux';
 import registerServiceWorker from './registerServiceWorker';
-
 import App from './containers/App';
-import { setProductLoading } from './actions/loading';
+// Action
+import { loadCategories } from './actions/categories';
 
 ReactDOM.render(
 	<Provider store={store}>
@@ -18,6 +18,5 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 registerServiceWorker();
-setTimeout(() => {
-	store.dispatch(setProductLoading(false))
-}, 1000);
+
+store.dispatch(loadCategories());

@@ -43,12 +43,12 @@ class SearchForm extends Component {
 	}
 }
 
-const SearchDialog = ({show, onRequestClose}) => (
+const SearchDialog = ({show, onRequestClose, onSubmit}) => (
 	<Dialog show={show} onRequestClose={onRequestClose}>
 		<div className="searchFormTitle">
 			Search
 		</div>
-		<SearchForm />
+		<SearchForm onSubmit={onSubmit}/>
 	</Dialog>
 );
 

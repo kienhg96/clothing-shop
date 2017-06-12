@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import "slick-carousel/slick/slick.css";
 import Slider from 'react-slick';
 import './ImageSlide.css';
-import Icon from '../Icon';
 import Lightbox from 'react-image-lightbox';
+import ImageSlideContent from './ImageSlideContent';
+import SlideButton from './SlideButton';
+import ZoomModal from './ZoomModal';
 
 const settings = {
 	dots: false,
@@ -13,50 +15,6 @@ const settings = {
 	slidesToScroll: 1,
 	arrows: false
 };
-
-const ImageSlideContent = ({url}) => (
-	<div className="imageSlideContent" style={{
-		background: `url(${url})`
-	}}>
-	</div>
-)
-
-const url1 = "https://cdn.shopify.com/s/files/1/0739/8127/products/1-1_f5ddcf48-4188-4472-8d2c-b703c1265783_1920x.jpg";
-const url2 = 'https://cdn.shopify.com/s/files/1/0739/8127/products/2-2_1920x.jpg';
-const url3 = 'https://cdn.shopify.com/s/files/1/0739/8127/products/2-1_6852cff7-43d8-474b-847e-d96ddf25adca_1920x.jpg';
-const url4 = 'https://cdn.shopify.com/s/files/1/0739/8127/products/6-1_2132a94c-513b-4d32-9db7-c36a81d7c9d5_1920x.jpg';
-
-const images = [
-	url1, url2, url3, url4
-];
-
-const FlatButton = ({content, onClick}) => (
-	<span className="slideButton" onClick={onClick}>
-		{content}
-	</span>
-);
-
-const SlideButton = ({onNextClick, onPrevClick, maxIndex, currentIndex}) => (
-	<div className="slideButtonContainer">
-		<FlatButton
-			content={<Icon icon="fa-arrow-left" />}
-			onClick={onPrevClick}
-		/>
-		<FlatButton
-			content={<Icon icon="fa-arrow-right" />}
-			onClick={onNextClick}
-		/>
-	</div>
-);
-
-const ZoomModal = ({onClick}) => (
-	<div className="zoomModalContainer">
-		<FlatButton
-			content={<Icon icon="fa-arrows-alt" />}
-			onClick={onClick}
-		/>
-	</div>
-)
 
 class ImageSlide extends Component {
 	constructor(props) {
@@ -95,6 +53,7 @@ class ImageSlide extends Component {
 
 	render() {
 		const { photoIndex } = this.state;
+		const { images } = this.props;
 		return (
 			<div className="imageSlide">
 				<Slider {...settings} ref={c => this.slide = c}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Option.css';
+import Icon from '../Icon';
 
 class Option extends Component {
 	constructor(props) {
@@ -30,7 +31,13 @@ class Option extends Component {
 		return (
 			<div className="Option">
 				<div className="OptionLabel">
-					<span className="label">{this.props.label}:</span> {this.props.value}
+					<span className="label">{this.props.label}: </span>
+					{this.props.value}
+				</div>
+				<div className="OptionIconDropdown">
+					<Icon style={{
+						fontSize: 15
+					}} icon="fa-caret-down" />
 				</div>
 				<div className="OptionHandle" 
 					onClick={() => {

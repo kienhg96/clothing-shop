@@ -1,7 +1,7 @@
 .imageSlideContent {
 	cursor: grab;
 	background-size: cover !important;
-	background-position: center !important;
+	background-position: center center !important;
 }
 
 .imageSlideContent:active {

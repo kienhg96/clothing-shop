@@ -17,6 +17,23 @@ class ProductInformation extends Component {
 			color: props.product.colors[0],
 			count: 1
 		}
+		this.handleAddToCart = this.handleAddToCart.bind(this);
+	}
+
+	handleAddToCart() {
+		let { count } = this.state;
+		if (count === "") {
+			this.setState({
+				count: 1
+			});
+			count = 1;
+		}
+		this.props.addToCart({
+			id: this.props.product.id,
+			size: this.state.size,
+			color: this.state.color,
+			count: parseInt(count, 10)
+		});
 	}
 
 	render() {
@@ -62,7 +79,8 @@ class ProductInformation extends Component {
 					<div className="itemCountContainer">
 						<ItemCount value={this.state.count}
 							onChange={e => {
-								if (!isNaN(e.target.value)) {
+								const value = e.target.value;
+								if (!isNaN(value) && value.length < 4) {
 									this.setState({
 										count: e.target.value
 									});
@@ -72,7 +90,7 @@ class ProductInformation extends Component {
 					</div>
 					<div className="checkoutButtonContainer">
 						<button className="checkoutButton"
-							onClick={() => console.log("Add to bag")}
+							onClick={this.handleAddToCart}
 						>Thêm vào giỏ</button>
 					</div>
 				</div>
@@ -90,4 +108,3 @@ class ProductInformation extends Component {
 }
 
 export default ProductInformation;
-

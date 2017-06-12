@@ -1,0 +1,17 @@
+.FlatButton {
+	padding: 18px 30px;
+	outline: none;
+	background: #232323;
+	color: white;
+	border: none;
+	transition: background 0.2s;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: 'Muli', sans-serif;
+}
+
+.FlatButton:hover {
+	background: #434343;
+}

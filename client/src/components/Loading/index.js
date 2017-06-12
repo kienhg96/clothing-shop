@@ -1,4 +1,6 @@
 import React from 'react';
+import './Loading.css';
+
 const loading_style = {
     position: 'relative',
     margin: '0px auto',

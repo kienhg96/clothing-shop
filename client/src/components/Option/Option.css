@@ -6,6 +6,7 @@
 	font-size: 14px;
 	padding: 20px;
 	position: relative;
+	border: 1px solid #eee;
 }
 
 .OptionList {
@@ -54,4 +55,10 @@
 
 .OptionLabel .label {
 	color: #666;
+}
+
+.OptionIconDropdown {
+	position: absolute;
+	right: 20px;
+	top: 21px;
 }

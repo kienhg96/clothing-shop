@@ -94,6 +94,7 @@
 .itemCountContainer {
 	margin-right: 20px;
 	flex: 0 0 70px;
+	border: 1px solid #eee;
 }
 
 .checkoutButton {

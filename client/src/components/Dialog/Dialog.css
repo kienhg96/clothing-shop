@@ -12,7 +12,7 @@
 }
 
 .dialogContent {
-	padding: 70px 80px 80px 80px;
+	
 	background-color: #fff;
 	position: relative;
 }
@@ -50,4 +50,18 @@
 .dialogTransition-leave.dialogTransition-leave-active {
 	opacity: 0;
 	transition: opacity 100ms ease-in;
+}
+
+@media screen and (min-width: 510px) {
+	.dialogContent {
+		padding: 70px 80px 80px 80px;
+		width: 500px;
+	}
+}
+
+@media screen and (max-width: 509px) {
+	.dialogContent {
+		padding: 70px 50px 80px 50px;
+		width: 100%;
+	}
 }

@@ -1,0 +1,19 @@
+@media screen and (min-width: 900px) {
+	.contentContainer {
+		margin-left: 290px;
+		height: 100vh;
+		overflow: auto;
+	}
+	.contentContainer::-webkit-scrollbar-track {
+		border-radius: 10px;
+		background-color: #d5d5d5;
+	}
+	.contentContainer::-webkit-scrollbar {
+		width: 8px;
+		background-color: #d5d5d5;
+	}
+	.contentContainer::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background-color: #e0ad3c;
+	}
+}

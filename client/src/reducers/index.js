@@ -4,11 +4,15 @@ import allProducts from './allProducts';
 import categories from './categories';
 import loadings from './loadings';
 import product from './product';
+import dialogs from './dialogs';
+import cart from './cart';
 
 export default combineReducers({
 	router,
 	allProducts,
 	categories,
 	loadings,
-	product
+	product,
+	dialogs,
+	cart
 });

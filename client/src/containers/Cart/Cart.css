@@ -1,0 +1,60 @@
+.Cart {
+	font-family: 'Muli', sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+	.Cart {
+		padding: 55px 10%;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.Cart {
+		padding: 85px 10%;
+	}
+}
+
+.Cart .title {
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.Cart .itemNumber {
+	color: #7f7f7f;
+	font-size: 13px;
+}
+
+.Cart .CartHeader {
+	margin-bottom: 60px;
+}
+
+.CartMessageContainer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.CartCheckoutContainer {
+	text-align: right;
+	margin-top: 40px;
+}
+
+.CartPrice {
+	color: #6d6d6d;
+	font-size: 16px;
+}
+
+.CartPrice .price {
+	color: black;
+	font-size: 30px;
+	margin-left: 10px;
+}
+
+.PriceNote {
+	font-style: italic;
+	color: #9d9d9d;
+	font-size: 12px;
+}
+
+.CartButtonGroup {
+	margin-top: 50px;
+}

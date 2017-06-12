@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './SideBar.css';
 import LeftSideBar from '../../components/LeftSideBar';
 import TopSidebar from '../../components/TopSidebar';
+import { connect } from 'react-redux';
+import { toggleSearchDialog } from '../../actions/dialogs';
 
 class SideBar extends Component {
 	constructor(props) {
@@ -10,6 +12,7 @@ class SideBar extends Component {
 			leftSizebar: false,
 		}
 		this.onResize = this.onResize.bind(this);
+		this.handleSearchClick = this.handleSearchClick.bind(this);
 	}
 
 	onResize() {
@@ -30,15 +33,19 @@ class SideBar extends Component {
 		window.removeEventListener('resize', this.onResize);
 	}
 
+	handleSearchClick() {
+		this.props.toggleSearchDialog(true);
+	}
+
 	render() {
 		return (
 			<div>
 				{this.state.leftSizebar 
 					? <LeftSideBar 
-						onSearchClick={this.props.onSearchClick}
+						onSearchClick={this.handleSearchClick}
 					/> 
 					: <TopSidebar 
-						onSearchClick={this.props.onSearchClick}
+						onSearchClick={this.handleSearchClick}
 					/>
 				}
 			</div>
@@ -46,4 +53,6 @@ class SideBar extends Component {
 	}
 }
 
-export default SideBar;
+export default connect(() => ({}), {
+	toggleSearchDialog
+})(SideBar);

@@ -24,7 +24,7 @@ const MetaMenu = ({menu, onMenuClick, onSearchClick ,itemCount = 5}) => (
 		}}>
 			<Icon icon="fa-search" />
 		</a>
-		<Link to="/bag">
+		<Link to="/cart">
 			<div style={{
 				display: 'inline',
 				position: 'relative'

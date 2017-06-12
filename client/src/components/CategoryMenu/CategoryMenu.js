@@ -3,6 +3,7 @@ import './CategoryMenu.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Loading from '../Loading';
 
 const CategoryMenuItem = ({active, title, url}) => (
 	<Link to={url} className={"categoryMenuItem" + (active ? " active" : "")}>
@@ -10,10 +11,11 @@ const CategoryMenuItem = ({active, title, url}) => (
 	</Link>
 )
 
-const CategoryMenu = ({categories, pathname}) => (
+const CategoryMenu = ({categories, pathname, loading}) => (
 	<div className="categoryMenu">
 		{
-			categories.map(category => (
+			loading ? <Loading width="80px" height="80px" /> 
+			:categories.map(category => (
 				<CategoryMenuItem
 					key={category.id} 
 					url={`/category/${category.name}`} 
@@ -35,5 +37,6 @@ CategoryMenu.propTypes = {
 
 export default connect(state => ({
 	pathname: state.router.location.pathname,
-	categories: state.categories
+	categories: state.categories,
+	loading: state.loadings.categories
 }))(CategoryMenu);
