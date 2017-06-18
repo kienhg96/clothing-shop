@@ -1,11 +1,13 @@
 import React from 'react';
 
-const CartCount = ({value, onChange}) => (
+const CartCount = ({value, onChange, onSubmit}) => (
 	<div className="CartCount">
-		<input type="text" className="itemCountInput"
-			value={value}
-			onChange={onChange}
-		/>
+		<form onSubmit={onSubmit}>
+			<input type="text" className="itemCountInput"
+				value={value}
+				onChange={onChange}
+			/>
+		</form>
 	</div>
 );
 

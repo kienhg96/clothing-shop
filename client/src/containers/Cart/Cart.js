@@ -4,9 +4,13 @@ import TextArea from '../../components/TextArea';
 import Button from '../../components/Button';
 import Icon from '../../components/Icon';
 import './Cart.css';
-import cartDummy from '../../dummy/cart';
 import { connect } from 'react-redux';
-import { loadCart } from '../../actions/cart';
+import {
+	loadCart,
+	changeCount,
+	checkout
+} from '../../actions/cart';
+import Loading from '../../components/Loading';
 
 class Cart extends Component {
 	constructor(props) {
@@ -21,7 +25,17 @@ class Cart extends Component {
 	}
 
 	render() {
-		const cart = cartDummy;
+		if (this.props.loading) {
+			return (
+				<div className="loadingContainer">
+					<Loading 
+						width="100px"
+						height="100px"
+					/>
+				</div>
+			);
+		}
+		const { cart } = this.props;
 		let total = 0;
 		cart.forEach(product => {
 			total += product.price * product.count;
@@ -40,9 +54,9 @@ class Cart extends Component {
 							<CartItem 
 								key={product.id}
 								product={product}
-								changeCount={count => {
-									console.log('Change id =', product.productId, 'new count =', count);
-								}}
+								changeCount={count => 
+									this.props.changeCount(product.id, count)
+								}
 							/>
 						)
 					}
@@ -69,8 +83,10 @@ class Cart extends Component {
 					<div className="CartButtonGroup">
 						<Button style={{
 							marginRight: 10
-						}} color="black">Check out</Button>
-						<Button color="black">
+						}} color="black"
+							onClick={() => this.props.checkout(this.state.message)}
+						>Check out</Button>
+						<Button color="black" onClick={() => this.props.loadCart()}>
 							<Icon icon="fa-refresh" style={{
 								fontSize: 18
 							}} />
@@ -82,6 +98,11 @@ class Cart extends Component {
 	}
 }
 
-export default connect(state => ({}), {
-	loadCart
+export default connect(state => ({
+	loading: state.loadings.cart,
+	cart: state.cart
+}), {
+	loadCart,
+	changeCount,
+	checkout
 })(Cart);

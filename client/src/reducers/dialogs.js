@@ -1,6 +1,11 @@
-import { TOGGLE_SEARCH_DIALOG } from '../constants';
+import {
+	TOGGLE_SEARCH_DIALOG,
+	TOGGLE_OVERLAY_LOADING
+} from '../constants';
+
 const DEFAULT_STATE = {
-	search: false
+	search: false,
+	overlayLoading: false
 }
 
 export default (state = DEFAULT_STATE, action) => {
@@ -9,6 +14,11 @@ export default (state = DEFAULT_STATE, action) => {
 			return {
 				...state,
 				search: action.open
+			}
+		case TOGGLE_OVERLAY_LOADING:
+			return {
+				...state,
+				overlayLoading: action.open
 			}
 		default:
 			return state;

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import SearchDialog from '../../components/SearchDialog';
 import { toggleSearchDialog } from '../../actions/dialogs';
 import { push } from 'react-router-redux';
+import OverlayLoading from '../../components/OverlayLoading';
 
 const DialogCenter = (props) => (
 	<div>
@@ -16,6 +17,9 @@ const DialogCenter = (props) => (
 					search: `q=${encodeURI(v)}`
 				});
 			}}
+		/>
+		<OverlayLoading
+			show={props.dialogs.overlayLoading}
 		/>
 	</div>
 )

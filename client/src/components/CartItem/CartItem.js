@@ -27,7 +27,12 @@ class CartItem extends Component {
 	}
 
 	handleAccept() {
-		this.props.changeCount(this.state.count);
+		const { count } = this.state;
+		if (count.length > 0 
+				&& count.toString() !== this.props.product.count.toString())
+		{
+			this.props.changeCount(parseInt(count, 10));
+		}
 	}
 
 	handleDeny() {
@@ -55,12 +60,16 @@ class CartItem extends Component {
 				<CartCount
 					value={this.state.count}
 					onChange={this.handleCountChange}
+					onSubmit={e => {
+						e.preventDefault();
+						this.handleAccept();
+					}}
 				/>
 				<CartUpdate
 					onAccept={this.handleAccept}
 					onDeny={this.handleDeny}
 					visible={this.state.count.toString() 
-							!== this.props.product.count.toString()}
+							!== this.props.product.count.toString() && this.state.count.length > 0}
 				/>
 				<CartDelete
 					onClick={this.handleDelete}
