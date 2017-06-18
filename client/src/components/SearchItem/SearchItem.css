@@ -1,0 +1,66 @@
+.SearchItem {
+	padding-top: 50px;	
+	padding-bottom: 50px;
+	border-top: 1px solid #dfdfdf;
+	display: flex;
+}
+
+.SearchItem .Image {
+	flex-basis: 120px;
+}
+
+.SearchItem .ImageContent {
+	height: 120px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.SearchItem .Info {
+	padding-left: 40px;
+}
+
+
+@media screen and (max-width: 600px) {
+	.SearchItem .Image {
+		display: none;
+	}
+	.SearchItem .Brief {
+		padding-left: 0;
+	}
+}
+
+.SearchItem .productName {
+	font-weight: bold;
+}
+
+.SearchItem .productName:after {
+	content: ' - ';
+}
+
+.SearchItem .productPrice {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.SearchItem .line {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.SearchItem .header {
+	font-size: 20px;
+}
+
+.SearchItem .brief {
+	color: #666;
+}
+
+.SearchItem .link {
+	color: #9d8347;
+	transition: color 0.2s;
+	font-size: 13px;
+}
+
+.SearchItem .link:hover {
+	color: #daab40;
+}

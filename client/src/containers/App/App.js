@@ -9,6 +9,8 @@ import Home from '../Home';
 import DialogCenter from '../DialogCenter';
 import Search from '../Search';
 import Cart from '../Cart';
+import Copyright from '../../components/Copyright';
+import parseQuery from '../../utils/parseQuery';
 
 class App extends Component {
 	render() {
@@ -27,11 +29,14 @@ class App extends Component {
 						<Route exact path="/product/:id" render={({match}) => 
 							<Product productId={match.params.id} />
 						} />
-						<Route exact path="/search/:q" render={({match}) => 
-							<Search query={match.params.q} />
-						}/>
+						<Route exact path="/search" render={({location}) => {
+							return <Search query={parseQuery(location.search).q || ''} />
+						}} />
 						<Route exact path="/cart" component={Cart} />
 					</Switch>
+					<div className="copyrightLittle">
+						<Copyright />
+					</div>
 				</div>
 				<DialogCenter />
 			</div>

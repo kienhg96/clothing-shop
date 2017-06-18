@@ -1,9 +1,9 @@
-import { SET_CART } from '../constants';
+import { SET_SEARCH } from '../constants';
 
 export default (state = [], action) => {
 	switch (action.type) {
-		case SET_CART:
-			return action.cart;
+		case SET_SEARCH:
+			return action.products;
 		default:
 			return state;
 	}

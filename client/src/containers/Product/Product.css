@@ -59,20 +59,3 @@
 		padding: 50px 50px;
 	}
 }
-
-.copyrightLittle {
-	background-color: #1d1d1d;
-	text-align: center;
-}
-
-@media screen and (min-width: 900px) {
-	.copyrightLittle {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 899px) {
-	.copyrightLittle {
-		display: block;
-	}
-}

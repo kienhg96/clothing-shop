@@ -1,58 +1,70 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './CartItem.css';
-import Icon from '../Icon';
-const url = "http://cdn.shopify.com/s/files/1/0739/8127/products/1_medium.jpg";
-
-const CartImage = ({url}) => (
-	<div className="CartItemImage"
-		style={{
-			backgroundImage: `url(${url})`
-		}}
-	></div>
-);
-
-const CartContent = () => (
-	<div className="CartContent">
-		<h1 className="ItemName">
-			<Link to="/">CASHMERE WOOL COAT</Link>
-		</h1>
-		<div className="ItemSizeColor">
-			34/WHITE
-		</div>
-		<div className="ItemPrice">
-			120000 VNĐ
-		</div>
-	</div>
-);
-
-const CartCount = () => (
-	<div className="CartCount">
-		<input type="text" className="itemCountInput"
-			value="123"
-			onChange={() => {}}
-		/>
-	</div>
-);
-
-const CartDelete = () => (
-	<div className="CartDelete">
-		<button className="transButton">
-			<Icon icon="fa-times" style={{
-				fontSize: 25
-			}}/>
-		</button>
-	</div>
-);
+import CartImage from './CartImage';
+import CartContent from './CartContent';
+import CartCount from './CartCount';
+import CartDelete from './CartDelete';
+import CartUpdate from './CartUpdate';
 
 class CartItem extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			count: props.product.count
+		}
+		this.handleCountChange = this.handleCountChange.bind(this);
+		this.handleDeny = this.handleDeny.bind(this);
+		this.handleAccept = this.handleAccept.bind(this);
+	}
+
+	handleCountChange(e) {
+		const value = e.target.value;
+		if (!isNaN(value) && value.length < 4) {
+			this.setState({
+				count: e.target.value
+			});
+		}
+	}
+
+	handleAccept() {
+		this.props.changeCount(this.state.count);
+	}
+
+	handleDeny() {
+		this.setState({
+			count: this.props.product.count
+		});
+	}
+
+	handleDelete() {
+		console.log('Delete');
+	}
+
 	render() {
+		const { product } = this.props;
 		return (
 			<div className="CartItem">
-				<CartImage url={url} />
-				<CartContent />
-				<CartCount />
-				<CartDelete />
+				<CartImage url={product.thumb} />
+				<CartContent 
+					name={product.name}
+					size={36}
+					color={product.color}
+					price={product.price}
+					url={`/product/${product.productId}`}
+				/>
+				<CartCount
+					value={this.state.count}
+					onChange={this.handleCountChange}
+				/>
+				<CartUpdate
+					onAccept={this.handleAccept}
+					onDeny={this.handleDeny}
+					visible={this.state.count.toString() 
+							!== this.props.product.count.toString()}
+				/>
+				<CartDelete
+					onClick={this.handleDelete}
+				/>
 			</div>
 		);
 	}

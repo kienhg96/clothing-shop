@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Product.css';
 import ProductInformation from '../../components/ProductInformation';
 import ImageSlide from '../../components/ImageSlide';
-import Copyright from '../../components/Copyright';
 import { connect } from 'react-redux';
 import Loading from '../../components/Loading';
 import { loadProduct } from '../../actions/product';
@@ -30,9 +29,6 @@ class Product extends Component {
 		const { loading } = this.props;
 		return (
 			<div className="productDetailContainer">
-				<div className="copyrightLittle">
-					<Copyright />
-				</div>
 				{!loading && <div className="productContentContainer">
 					<ProductInformation 
 						product={this.props.product}

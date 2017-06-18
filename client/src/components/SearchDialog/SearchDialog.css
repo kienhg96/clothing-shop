@@ -1,6 +1,5 @@
 .searchFormContainer {
 	border: 5px solid #eeeeee;
-	padding: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -14,19 +13,8 @@
 .searchIconContainer {
 	flex-grow: 0;
 	flex-shrink: 0;
-	margin-left: 10px;
+	margin-right: 20px;
 	cursor: pointer;
-}
-
-.searchInput {
-	border: none;
-	font-size: 18px;
-	width: 100%;
-	font-family: 'Montserrat', sans-serif;
-}
-
-.searchInput:focus {
-	outline: none;
 }
 
 .searchFormTitle {

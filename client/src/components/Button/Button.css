@@ -1,7 +1,6 @@
 .FlatButton {
 	padding: 18px 30px;
 	outline: none;
-	background: #232323;
 	color: white;
 	border: none;
 	transition: background 0.2s;
@@ -12,6 +11,18 @@
 	font-family: 'Muli', sans-serif;
 }
 
-.FlatButton:hover {
+.FlatButton.black {
+	background: #232323;
+}
+
+.FlatButton.black:hover {
 	background: #434343;
+}
+
+.FlatButton.yellow {
+	background: #b89955;
+}
+
+.FlatButton.yellow:hover {
+	background: #ce9e37;
 }

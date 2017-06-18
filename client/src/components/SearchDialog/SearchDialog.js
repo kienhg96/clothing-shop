@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from '../Dialog';
 import Icon from '../Icon';
+import Input from '../Input';
 import './SearchDialog.css';
 
 class SearchForm extends Component {
@@ -29,9 +30,10 @@ class SearchForm extends Component {
 			<div className="searchFormContainer">
 				<div className="searchInputContainer">
 					<form onSubmit={this.handleSubmit}>
-						<input type="text" className="searchInput"
+						<Input type="text"
 							placeholder="Input Anything"
 							onChange={this.handleChange}
+							autoFocus={true}
 						/>
 					</form>
 				</div>

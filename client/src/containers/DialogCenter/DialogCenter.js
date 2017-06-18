@@ -11,7 +11,10 @@ const DialogCenter = (props) => (
 			onRequestClose={() => {props.toggleSearchDialog(false)}}
 			onSubmit={v => {
 				props.toggleSearchDialog(false);
-				props.push(`/search/${encodeURI(v)}`);
+				props.push({
+					pathname: '/search',
+					search: `q=${encodeURI(v)}`
+				});
 			}}
 		/>
 	</div>

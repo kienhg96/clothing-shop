@@ -6,6 +6,7 @@ import loadings from './loadings';
 import product from './product';
 import dialogs from './dialogs';
 import cart from './cart';
+import search from './search';
 
 export default combineReducers({
 	router,
@@ -14,5 +15,6 @@ export default combineReducers({
 	loadings,
 	product,
 	dialogs,
-	cart
+	cart,
+	search
 });
