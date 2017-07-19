@@ -1,0 +1,17 @@
+{
+  "name": "clothes-shop-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/start.js",
+  "scripts": {
+    "start": "node bin/start.js"
+  },
+  "author": "HoangKien",
+  "license": "NONE",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.7"
+  }
+}

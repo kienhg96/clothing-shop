@@ -1,0 +1,35 @@
+clothes:
+	- id,
+	- name,
+	- producer,
+	- price,
+	- sizes,
+	- colors,
+	- thumb,
+	- images,
+	- category
+
+category:
+	- id,
+	- name,
+	- clothes,
+	- shortname
+
+cart:
+	- id,
+	- session,
+	- items: [{
+		- clothes,
+		- count,
+		- size,
+		- color
+	}]
+
+order: 
+	- id,
+	- cart,
+	- user: {
+		- phone,
+		- address,
+		- email
+	}

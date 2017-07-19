@@ -1,0 +1,1 @@
+exports.findClothesById = require('./findClothesById');
